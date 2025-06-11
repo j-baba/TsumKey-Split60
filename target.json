@@ -1,18 +1,18 @@
 {
     "include": [
         {
-            "keyboard": "tsumkey-split60",
+            "keyboard": "tsumkey_split60",
             "keymap": "vial",
             "target": "uf2",
             "flags": "EXTRAFLAGS=-DINIT_EE_HANDS_LEFT",
-            "name": "tsumkey-split60_vial_left"
+            "name": "tsumkey_split60_vial_left"
         },
         {
-            "keyboard": "tsumkey-split60",
+            "keyboard": "tsumkey_split60",
             "keymap": "vial",
             "target": "uf2",
             "flags": "EXTRAFLAGS=-DINIT_EE_HANDS_RIGHT",
-            "name": "tsumkey-split60_vial_right"
+            "name": "tsumkey_split60_vial_right"
         }
     ]
 }
