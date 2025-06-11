@@ -1,6 +1,6 @@
 {
     "manufacturer": "Auto-Keyboard-Design-Kit by sekigon-gonnoc",
-    "keyboard_name": "honey_split_ergo",
+    "keyboard_name": "tsumkey-split60",
     "maintainer": "Auto-KDK",
     "bootloader": "rp2040",
     "diode_direction": "COL2ROW",
