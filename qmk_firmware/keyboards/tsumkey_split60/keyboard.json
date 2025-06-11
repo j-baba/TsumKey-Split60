@@ -1,6 +1,6 @@
 {
     "manufacturer": "Auto-Keyboard-Design-Kit by sekigon-gonnoc",
-    "keyboard_name": "tsumkey-split60",
+    "keyboard_name": "tsumkey_split60",
     "maintainer": "Auto-KDK",
     "bootloader": "rp2040",
     "diode_direction": "COL2ROW",
