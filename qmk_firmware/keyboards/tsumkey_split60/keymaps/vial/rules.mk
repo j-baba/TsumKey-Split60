@@ -1,3 +1,4 @@
+KEYBOARD_FOLDER = keyboards/tsumkey_split60
 VIA_ENABLE = yes
 VIAL_ENABLE = yes
 VIAL_INSECURE = yes
