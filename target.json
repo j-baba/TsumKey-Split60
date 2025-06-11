@@ -1,0 +1,18 @@
+{
+    "include": [
+        {
+            "keyboard": "honey_split_ergo",
+            "keymap": "vial",
+            "target": "uf2",
+            "flags": "EXTRAFLAGS=-DINIT_EE_HANDS_LEFT",
+            "name": "honey_split_ergo_vial_left"
+        },
+        {
+            "keyboard": "honey_split_ergo",
+            "keymap": "vial",
+            "target": "uf2",
+            "flags": "EXTRAFLAGS=-DINIT_EE_HANDS_RIGHT",
+            "name": "honey_split_ergo_vial_right"
+        }
+    ]
+}
