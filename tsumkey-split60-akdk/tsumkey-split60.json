@@ -2,7 +2,7 @@
     "layout": {
         "isSplit": true,
         "switchType": "choc2-19",
-        "keyboardName": "tsumkey_split60",
+        "keyboardName": "tsumkey-split60",
         "minStabilizer": 2,
         "controllerType": "wired",
         "leftData": {
@@ -2311,7 +2311,7 @@
         "bottomRim": 3,
         "chamferHeight": 2,
         "chamferAngle": 30,
-        "switchEmbankment": 0.7,
+        "switchEmbankment": 0,
         "snapDirection": "horizontal",
         "mountType": "gasket",
         "chamferType": "C",
