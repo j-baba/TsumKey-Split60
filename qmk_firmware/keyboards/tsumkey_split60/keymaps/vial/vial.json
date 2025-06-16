@@ -283,5 +283,17 @@
             ]
         ]
     },
-    "customKeycodes": {}
+    "customKeycodes": {
+        "KEY_SCROLL_ROT_CW": {
+            "id": "KEY_SCROLL_ROT_CW",
+            "name": "Scroll Angle +10°",
+            "description": "Rotate scroll direction +10 degrees"
+        },
+        "KEY_SCROLL_ROT_CCW": {
+            "id": "KEY_SCROLL_ROT_CCW",
+            "name": "Scroll Angle -10°",
+            "description": "Rotate scroll direction -10 degrees"
+        }
+    }
+
 }
