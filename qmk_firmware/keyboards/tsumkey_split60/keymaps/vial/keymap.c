@@ -13,13 +13,8 @@ enum custom_keycodes {
     KEY_SCROLL_ROT_CCW,                // -10度
 };
 
-// キーマップ（サンプル、空定義から1キーだけ配置例）
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [0] = LAYOUT(
-        KEY_SCROLL_ROT_CW, KEY_SCROLL_ROT_CCW
-        // 必要に応じて他のキーを定義
-    ),
-};
+// キーマップ
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {};
 
 // キー入力でスクロール角度を調整
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
