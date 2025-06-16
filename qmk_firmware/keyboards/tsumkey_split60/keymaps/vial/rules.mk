@@ -4,4 +4,5 @@ VIAL_INSECURE = yes
 
 POINTING_DEVICE_DRIVER = custom
 SRC += paw3222.c
-    
+
+LAYOUTS = LAYOUT
