@@ -1,25 +1,39 @@
-#include QMK_KEYBOARD_H
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {};
+//#include QMK_KEYBOARD_H
+//const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {};
 
+#include QMK_KEYBOARD_H
+#include <math.h>
+
+// スクロール角度（初期値はズレ補正 -40°）
+float scroll_angle_deg = -40.0f;
+
+// カスタムキーコード
 enum custom_keycodes {
-    ROT_R15 = SAFE_RANGE,
-    ROT_L15
+    KEY_SCROLL_ROT_CW = SAFE_RANGE,    // +10度
+    KEY_SCROLL_ROT_CCW,                // -10度
 };
 
+// キーマップ（サンプル、空定義から1キーだけ配置例）
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    [0] = LAYOUT(
+        KEY_SCROLL_ROT_CW, KEY_SCROLL_ROT_CCW
+        // 必要に応じて他のキーを定義
+    ),
+};
+
+// キー入力でスクロール角度を調整
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case ROT_R15:
-            if (record->event.pressed) {
-                angle += 15;
-                // 必要に応じて最大値・最小値の制御
-            }
-            return false;
-        case ROT_L15:
-            if (record->event.pressed) {
-                angle -= 15;
-                // 必要に応じて最大値・最小値の制御
-            }
-            return false;
+    if (record->event.pressed) {
+        switch (keycode) {
+            case KEY_SCROLL_ROT_CW:
+                scroll_angle_deg += 10.0f;
+                if (scroll_angle_deg > 180.0f) scroll_angle_deg -= 360.0f;
+                return false;
+            case KEY_SCROLL_ROT_CCW:
+                scroll_angle_deg -= 10.0f;
+                if (scroll_angle_deg < -180.0f) scroll_angle_deg += 360.0f;
+                return false;
+        }
     }
     return true;
 }
