@@ -169,16 +169,34 @@ uint16_t paw3222_get_cpi(void) {
 
 uint8_t read_pid_paw3222(void) { return paw3222_read_reg(REG_PID1); }
 
+//report_mouse_t paw3222_get_report(report_mouse_t mouse_report) {
+//  report_paw3222_t data = paw3222_read();
+//  if (data.isMotion) {
+//    pd_dprintf("Raw ] X: %d, Y: %d\n", data.x, data.y);
+//
+//    mouse_report.x = data.x;
+//    mouse_report.y = data.y;
+//  }
+//
+//  return mouse_report;
+//}
+
+extern float scroll_angle_deg;
+
 report_mouse_t paw3222_get_report(report_mouse_t mouse_report) {
-  report_paw3222_t data = paw3222_read();
-  if (data.isMotion) {
-    pd_dprintf("Raw ] X: %d, Y: %d\n", data.x, data.y);
+    report_paw3222_t data = paw3222_read();
+    if (data.isMotion) {
+        float angle_rad = scroll_angle_deg * 3.14159265f / 180.0f;
+        float cos_theta = cosf(angle_rad);
+        float sin_theta = sinf(angle_rad);
 
-    mouse_report.x = data.x;
-    mouse_report.y = data.y;
-  }
+        float new_x = data.x * cos_theta - data.y * sin_theta;
+        float new_y = data.x * sin_theta + data.y * cos_theta;
 
-  return mouse_report;
+        mouse_report.x = (int8_t)new_x;
+        mouse_report.y = (int8_t)new_y;
+    }
+    return mouse_report;
 }
 
 void pointing_device_driver_init(void) { paw3222_init(); }
