@@ -24,6 +24,7 @@
 #include "paw3222.h"
 #include "pointing_device_internal.h"
 #include "wait.h"
+#include <math.h>
 
 #define REG_PID1 0x00
 #define REG_PID2 0x01
