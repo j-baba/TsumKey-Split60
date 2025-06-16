@@ -182,12 +182,10 @@ uint8_t read_pid_paw3222(void) { return paw3222_read_reg(REG_PID1); }
 //  return mouse_report;
 //}
 
-extern float scroll_angle_deg;
-
 report_mouse_t paw3222_get_report(report_mouse_t mouse_report) {
     report_paw3222_t data = paw3222_read();
     if (data.isMotion) {
-        float angle_rad = scroll_angle_deg * 3.14159265f / 180.0f;
+        float angle_rad = (40.0f) * 3.14159265f / 180.0f;
         float cos_theta = cosf(angle_rad);
         float sin_theta = sinf(angle_rad);
 
